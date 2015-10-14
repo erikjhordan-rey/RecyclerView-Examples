@@ -3,15 +3,23 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_linear"
-            android:title="LinearLayoutManager" />
+            android:id="@+id/nav_linear_v"
+            android:title="LinearLayoutManager (vertical)" />
         <item
-            android:id="@+id/nav_grid"
-            android:title="GridLayoutManager" />
+            android:id="@+id/nav_linear_h"
+            android:title="LinearLayoutManager (horizontal)" />
         <item
-            android:id="@+id/nav_staggered"
-            android:title="StaggeredGridLayoutManager" />
-
+            android:id="@+id/nav_grid_v"
+            android:title="GridLayoutManager (vertical)" />
+        <item
+            android:id="@+id/nav_grid_h"
+            android:title="GridLayoutManager (horizontal)" />
+        <item
+            android:id="@+id/nav_staggered_v"
+            android:title="StaggeredGridLayoutManager (vertical)" />
+        <item
+            android:id="@+id/nav_staggered_h"
+            android:title="StaggeredGridLayoutManager (horizontal)" />
     </group>
 
 

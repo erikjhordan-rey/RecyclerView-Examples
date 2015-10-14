@@ -6,10 +6,10 @@ import android.support.v7.widget.RecyclerView;
 /**
  * Created by Jhordan on 13/10/15.
  */
-public class LinearFragment extends BaseFragment {
+public class LinearHorizontalFragment extends BaseFragment {
 
-    public static LinearFragment newInstance() {
-        return new LinearFragment();
+    public static LinearHorizontalFragment newInstance() {
+        return new LinearHorizontalFragment();
     }
 
 
@@ -22,7 +22,7 @@ public class LinearFragment extends BaseFragment {
     private LinearLayoutManager getLinearLayoutManager() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
                 getActivity(),
-                LinearLayoutManager.VERTICAL,
+                LinearLayoutManager.HORIZONTAL,
                 false);
 
         return linearLayoutManager;

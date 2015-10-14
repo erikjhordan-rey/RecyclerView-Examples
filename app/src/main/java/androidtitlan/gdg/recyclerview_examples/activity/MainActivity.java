@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements DrawerPresenterIm
         ButterKnife.bind(this);
         setupViews();
         drawerPresenter = new DrawerPresenterImpl(this);
-        navigationView.getMenu().performIdentifierAction(R.id.nav_linear, 0);
+        navigationView.getMenu().performIdentifierAction(R.id.nav_linear_v, 0);
     }
 
     @Override public boolean onCreateOptionsMenu(Menu menu) {
