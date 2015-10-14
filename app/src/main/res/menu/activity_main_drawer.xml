@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_linear"
+            android:title="LinearLayoutManager" />
+        <item
+            android:id="@+id/nav_grid"
+            android:title="GridLayoutManager" />
+        <item
+            android:id="@+id/nav_staggered"
+            android:title="StaggeredGridLayoutManager" />
+
+    </group>
+
+
+</menu>
