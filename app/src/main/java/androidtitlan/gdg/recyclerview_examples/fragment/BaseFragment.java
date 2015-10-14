@@ -3,7 +3,6 @@ package androidtitlan.gdg.recyclerview_examples.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +12,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import androidtitlan.gdg.recyclerview_examples.presenter.PicturePresenter;
-import androidtitlan.gdg.recyclerview_examples.view.PictureMvpView;
 import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.adapter.AdapterExample;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
+import androidtitlan.gdg.recyclerview_examples.presenter.PicturePresenter;
+import androidtitlan.gdg.recyclerview_examples.view.PictureMvpView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -27,10 +26,8 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment extends Fragment implements PictureMvpView {
 
 
-    @Bind(R.id.recycler_view)
-    RecyclerView recyclerView;
-    @Bind(R.id.progress_bar)
-    ProgressBar progressBar;
+    @Bind(R.id.recycler_view) RecyclerView recyclerView;
+    @Bind(R.id.progress_bar) ProgressBar progressBar;
 
     private PicturePresenter picturePresenter;
 
@@ -47,45 +44,36 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView {
         return rootView;
     }
 
-    @Override
-    public void onResume() {
+    @Override public void onResume() {
         super.onResume();
         picturePresenter.onResume();
     }
 
-    @Override
-    public void setItems(ArrayList<Picture> pictureList) {
+    @Override public void setItems(ArrayList<Picture> pictureList) {
         recyclerView.setAdapter(new AdapterExample(pictureList));
     }
 
-    @Override
-    public void showProgress() {
+    @Override public void showProgress() {
         progressBar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.INVISIBLE);
     }
 
-    @Override
-    public void hideProgress() {
+    @Override public void hideProgress() {
         progressBar.setVisibility(View.INVISIBLE);
         recyclerView.setVisibility(View.VISIBLE);
     }
 
-    @Override
-    public void showMessage(String message) {
+    @Override public void showMessage(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
-
-    @Override
-    public void onDestroy() {
+    @Override public void onDestroy() {
         picturePresenter.detachView();
         super.onDestroy();
     }
 
     private void setupRecyclerView() {
-
         recyclerView.setLayoutManager(getLayoutManager());
-
     }
 
     protected abstract RecyclerView.LayoutManager getLayoutManager();

@@ -24,29 +24,24 @@ public class PicturePresenter implements Presenter<PictureMvpView>, LoaderListen
         if (view == null)
             throw new IllegalArgumentException("You can't set a null view");
 
-
         pictureMvpView = view;
     }
 
-    @Override
-    public void detachView() {
+    @Override public void detachView() {
         pictureMvpView = null;
     }
 
-    @Override
-    public void onResume() {
+    @Override public void onResume() {
         pictureMvpView.showProgress();
         pictureInteractor.loadItems(this);
     }
 
-    @Override
-    public void onItemSelected(int position) {
+    @Override public void onItemSelected(int position) {
         pictureMvpView.showMessage(Integer.toString(position));
 
     }
 
-    @Override
-    public void onFinished(ArrayList<Picture> pictureList) {
+    @Override public void onFinished(ArrayList<Picture> pictureList) {
         pictureMvpView.setItems(pictureList);
         pictureMvpView.hideProgress();
     }
