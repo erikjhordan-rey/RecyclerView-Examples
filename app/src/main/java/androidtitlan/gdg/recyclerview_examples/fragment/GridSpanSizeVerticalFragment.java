@@ -12,10 +12,10 @@ import androidtitlan.gdg.recyclerview_examples.model.Picture;
 /**
  * Created by Jhordan on 13/10/15.
  */
-public class GridVerticalFragment extends BaseFragment {
+public class GridSpanSizeVerticalFragment extends BaseFragment {
 
-    public static GridVerticalFragment newInstance() {
-        return new GridVerticalFragment();
+    public static GridSpanSizeVerticalFragment newInstance() {
+        return new GridSpanSizeVerticalFragment();
     }
 
 
@@ -41,6 +41,14 @@ public class GridVerticalFragment extends BaseFragment {
                 2,
                 GridLayoutManager.VERTICAL,
                 false);
+
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                //stagger rows custom
+                return (position % 3 == 0 ? 2 : 1);
+            }
+        });
 
         return gridLayoutManager;
     }

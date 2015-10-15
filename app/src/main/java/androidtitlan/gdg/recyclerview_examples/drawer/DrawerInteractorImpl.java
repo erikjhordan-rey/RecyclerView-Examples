@@ -5,7 +5,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 
 import androidtitlan.gdg.recyclerview_examples.fragment.GridHorizontalFragment;
+import androidtitlan.gdg.recyclerview_examples.fragment.GridSpanSizeVerticalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.GridVerticalFragment;
+import androidtitlan.gdg.recyclerview_examples.fragment.ItemTypesVerticalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.LinearHorizontalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.LinearVerticalFragment;
 import androidtitlan.gdg.recyclerview_examples.R;
@@ -33,11 +35,18 @@ public class DrawerInteractorImpl implements DrawerInteractor {
             case R.id.nav_grid_h:
                 listener.fragmentReplace(GridHorizontalFragment.newInstance());
                 break;
+            case R.id.nav_grid_span:
+                listener.fragmentReplace(GridSpanSizeVerticalFragment.newInstance());
+                break;
             case R.id.nav_staggered_v:
                 listener.fragmentReplace(StaggeredVerticalFragment.newInstance());
                 break;
             case R.id.nav_staggered_h:
                 listener.fragmentReplace(StaggeredHorizontalFragment.newInstance());
+                break;
+
+            case R.id.nav_item_types:
+                listener.fragmentReplace(ItemTypesVerticalFragment.newInstance());
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

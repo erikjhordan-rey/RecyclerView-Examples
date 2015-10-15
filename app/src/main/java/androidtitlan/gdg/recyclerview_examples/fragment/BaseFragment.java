@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -28,8 +29,10 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment extends Fragment implements PictureMvpView {
 
 
-    @Bind(R.id.recycler_view) RecyclerView recyclerView;
-    @Bind(R.id.progress_bar) ProgressBar progressBar;
+    @Bind(R.id.recycler_view)
+    RecyclerView recyclerView;
+    @Bind(R.id.progress_bar)
+    ProgressBar progressBar;
 
     private PicturePresenter picturePresenter;
 
@@ -46,30 +49,36 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView {
         return rootView;
     }
 
-    @Override public void onResume() {
+    @Override
+    public void onResume() {
         super.onResume();
         picturePresenter.onResume();
     }
 
-    @Override public void setItems(ArrayList<Picture> pictureList) {
-        recyclerView.setAdapter(new AdapterExample(pictureList,getItemLayout()));
+    @Override
+    public void setItems(ArrayList<Picture> pictureList) {
+        recyclerView.setAdapter(getAdapter(pictureList, getItemLayout()));
     }
 
-    @Override public void showProgress() {
+    @Override
+    public void showProgress() {
         progressBar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.INVISIBLE);
     }
 
-    @Override public void hideProgress() {
+    @Override
+    public void hideProgress() {
         progressBar.setVisibility(View.INVISIBLE);
         recyclerView.setVisibility(View.VISIBLE);
     }
 
-    @Override public void showMessage(String message) {
+    @Override
+    public void showMessage(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override public void onDestroy() {
+    @Override
+    public void onDestroy() {
         picturePresenter.detachView();
         super.onDestroy();
     }
@@ -80,7 +89,11 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView {
     }
 
     protected abstract RecyclerView.LayoutManager getLayoutManager();
+
     protected abstract int getItemLayout();
+
+    protected abstract RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList, int itemLayout);
+
 
     //protected abstract RecyclerView.ItemDecoration getItemDecoration();
 }

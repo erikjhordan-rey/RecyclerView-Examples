@@ -1,21 +1,22 @@
 package androidtitlan.gdg.recyclerview_examples.fragment;
 
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 import androidtitlan.gdg.recyclerview_examples.R;
-import androidtitlan.gdg.recyclerview_examples.adapter.AdapterExample;
+import androidtitlan.gdg.recyclerview_examples.adapter.AdapterExampleTypes;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
 
 /**
  * Created by Jhordan on 13/10/15.
  */
-public class GridVerticalFragment extends BaseFragment {
+public class ItemTypesVerticalFragment extends BaseFragment {
 
-    public static GridVerticalFragment newInstance() {
-        return new GridVerticalFragment();
+    public static ItemTypesVerticalFragment newInstance() {
+        return new ItemTypesVerticalFragment();
     }
 
 
@@ -31,7 +32,7 @@ public class GridVerticalFragment extends BaseFragment {
 
     @Override
     protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList, int itemLayout) {
-        return new AdapterExample(pictureList,itemLayout);
+        return new AdapterExampleTypes(pictureList,itemLayout);
     }
 
 

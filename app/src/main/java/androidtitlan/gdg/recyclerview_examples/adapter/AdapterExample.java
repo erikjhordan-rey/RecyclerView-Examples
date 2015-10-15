@@ -66,4 +66,5 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
         }
 
     }
+
 }

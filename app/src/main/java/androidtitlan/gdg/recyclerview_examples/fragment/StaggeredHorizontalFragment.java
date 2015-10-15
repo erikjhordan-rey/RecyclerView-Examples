@@ -3,7 +3,11 @@ package androidtitlan.gdg.recyclerview_examples.fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
+import java.util.ArrayList;
+
 import androidtitlan.gdg.recyclerview_examples.R;
+import androidtitlan.gdg.recyclerview_examples.adapter.AdapterExample;
+import androidtitlan.gdg.recyclerview_examples.model.Picture;
 
 /**
  * Created by Jhordan on 13/10/15.
@@ -22,9 +26,12 @@ public class StaggeredHorizontalFragment extends BaseFragment {
 
     @Override
     protected int getItemLayout() {
-               return R.layout.simple_item_tree;
+               return R.layout.item_type_three;
     }
-
+    @Override
+    protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList, int itemLayout) {
+        return new AdapterExample(pictureList,itemLayout);
+    }
 
     private StaggeredGridLayoutManager getStaggeredLayoutManager() {
 
