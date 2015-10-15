@@ -52,7 +52,7 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView {
     }
 
     @Override public void setItems(ArrayList<Picture> pictureList) {
-        recyclerView.setAdapter(new AdapterExample(pictureList));
+        recyclerView.setAdapter(new AdapterExample(pictureList,getItemLayout()));
     }
 
     @Override public void showProgress() {
@@ -80,6 +80,7 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView {
     }
 
     protected abstract RecyclerView.LayoutManager getLayoutManager();
+    protected abstract int getItemLayout();
 
     //protected abstract RecyclerView.ItemDecoration getItemDecoration();
 }

@@ -5,4 +5,6 @@
     <color name="colorAccent">#18FFFF</color>
     <color name="textColorPrimary">#212121</color>
     <color name="textColorSecondary">#727272</color>
+    <color name="white">#ffffff</color>
+    <color name="window_background">#FFF5F5F5</color>
 </resources>

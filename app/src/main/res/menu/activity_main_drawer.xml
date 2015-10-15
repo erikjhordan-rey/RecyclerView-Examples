@@ -11,15 +11,26 @@
         <item
             android:id="@+id/nav_grid_v"
             android:title="GridLayoutManager (vertical)" />
+
         <item
             android:id="@+id/nav_grid_h"
             android:title="GridLayoutManager (horizontal)" />
+
+        <item
+            android:id="@+id/nav_grid_span"
+            android:title="GridLayoutManager + SpanSizeLookup" />
         <item
             android:id="@+id/nav_staggered_v"
             android:title="StaggeredGridLayoutManager (vertical)" />
         <item
             android:id="@+id/nav_staggered_h"
             android:title="StaggeredGridLayoutManager (horizontal)" />
+
+        <item
+            android:id="@+id/nav_item_types"
+            android:title="ItemTypes" />
+
+
     </group>
 
 

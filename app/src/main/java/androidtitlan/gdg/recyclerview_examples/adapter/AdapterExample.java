@@ -21,16 +21,19 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
 
 
     private ArrayList<Picture> pictureArrayList;
+    private int itemLayout;
 
-    public AdapterExample(){}
+    public AdapterExample() {
+    }
 
-    public AdapterExample(ArrayList<Picture> pictureArrayList) {
+    public AdapterExample(ArrayList<Picture> pictureArrayList, int itemLayout) {
         this.pictureArrayList = pictureArrayList;
+        this.itemLayout = itemLayout;
     }
 
     @Override
     public ExampleHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.simple_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
         return new ExampleHolder(view);
     }
 
@@ -52,8 +55,10 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
 
     public static class ExampleHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.txt_title) TextView title;
-        @Bind(R.id.imageView) ImageView imageView;
+        @Bind(R.id.txt_title)
+        TextView title;
+        @Bind(R.id.imageView)
+        ImageView imageView;
 
         public ExampleHolder(View itemView) {
             super(itemView);
