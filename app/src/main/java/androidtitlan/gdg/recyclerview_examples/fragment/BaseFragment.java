@@ -17,6 +17,8 @@ import androidtitlan.gdg.recyclerview_examples.adapter.AdapterExample;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
 import androidtitlan.gdg.recyclerview_examples.presenter.PicturePresenter;
 import androidtitlan.gdg.recyclerview_examples.view.PictureMvpView;
+import androidtitlan.gdg.recyclerview_examples.widget.DividerDecoration;
+import androidtitlan.gdg.recyclerview_examples.widget.ItemOffsetDecoration;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -74,6 +76,7 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView {
 
     private void setupRecyclerView() {
         recyclerView.setLayoutManager(getLayoutManager());
+        recyclerView.addItemDecoration(new ItemOffsetDecoration(recyclerView.getContext(), R.dimen.item_decoration));
     }
 
     protected abstract RecyclerView.LayoutManager getLayoutManager();
