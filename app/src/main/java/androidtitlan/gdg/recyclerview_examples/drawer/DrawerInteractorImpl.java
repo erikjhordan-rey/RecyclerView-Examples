@@ -48,6 +48,7 @@ public class DrawerInteractorImpl implements DrawerInteractor {
             case R.id.nav_item_types:
                 listener.fragmentReplace(ItemTypesVerticalFragment.newInstance());
                 break;
+
         }
         drawerLayout.closeDrawer(GravityCompat.START);
     }

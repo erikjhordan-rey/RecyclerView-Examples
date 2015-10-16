@@ -29,7 +29,6 @@ public class ItemOffsetDecoration extends RecyclerView.ItemDecoration {
 
             outRect.set(mItemOffset, (mItemOffset /2), mItemOffset, (mItemOffset/2));
 
-
     }
 
 
