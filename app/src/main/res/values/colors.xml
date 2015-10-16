@@ -7,4 +7,6 @@
     <color name="textColorSecondary">#727272</color>
     <color name="white">#ffffff</color>
     <color name="window_background">#FFF5F5F5</color>
+    <color name="selectable_pressed">#99BDBDBD</color>
+
 </resources>

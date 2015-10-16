@@ -18,30 +18,20 @@ public class GridHorizontalFragment extends BaseFragment {
         return new GridHorizontalFragment();
     }
 
-
-    @Override
-    protected RecyclerView.LayoutManager getLayoutManager() {
+    @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getGridLayoutManager();
     }
 
-    @Override
-    protected int getItemLayout() {
-        return R.layout.item_type_two;
-    }
-
-    @Override
-    protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList, int itemLayout) {
-        return new AdapterExample(pictureList,itemLayout);
+    @Override protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList) {
+        return new AdapterExample(pictureList,R.layout.item_type_two);
     }
 
     private GridLayoutManager getGridLayoutManager() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(
+       return new GridLayoutManager(
                 getActivity(),
                 2,
                 GridLayoutManager.HORIZONTAL,
                 false);
-
-        return gridLayoutManager;
     }
 }
 

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
+import androidtitlan.gdg.recyclerview_examples.presenter.RecyclerItemClickListener;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -26,6 +27,11 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
     private static final int TYPE_ITEM_1 = 0;
     private static final int TYPE_ITEM_2 = 1;
     private static final int TYPE_ITEM_3 = 2;
+    private RecyclerItemClickListener recyclerItemClickListener;
+
+    public void setRecyclerItemClickListener(RecyclerItemClickListener recyclerItemClickListener) {
+        this.recyclerItemClickListener = recyclerItemClickListener;
+    }
 
     public AdapterExampleTypes() {
     }
@@ -61,7 +67,7 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         Picture picture = pictureArrayList.get(position);
 
 
@@ -78,8 +84,17 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
                 setTypeItem3(((ExampleHolderTypeThree) holder), picture);
                 break;
 
-
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (recyclerItemClickListener != null)
+                    recyclerItemClickListener.onItemClickListener(position);
+            }
+        });
+
+
     }
 
 
@@ -108,9 +123,11 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView title;
         @Bind(R.id.imageView)
         ImageView imageView;
+        View view;
 
         public ExampleHolder(View itemView) {
             super(itemView);
+            view = itemView;
             ButterKnife.bind(this, itemView);
         }
 
@@ -122,9 +139,11 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView title;
         @Bind(R.id.imageView)
         ImageView imageView;
+        View view;
 
         public ExampleHolderTypeTwo(View itemView) {
             super(itemView);
+            view = itemView;
             ButterKnife.bind(this, itemView);
         }
 
@@ -136,11 +155,15 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView title;
         @Bind(R.id.imageView)
         ImageView imageView;
+        View view;
 
         public ExampleHolderTypeThree(View itemView) {
             super(itemView);
+            view = itemView;
             ButterKnife.bind(this, itemView);
+
         }
+
 
     }
 

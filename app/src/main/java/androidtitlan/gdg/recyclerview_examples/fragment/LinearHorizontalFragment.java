@@ -18,31 +18,20 @@ public class LinearHorizontalFragment extends BaseFragment {
         return new LinearHorizontalFragment();
     }
 
-
-    @Override
-    protected RecyclerView.LayoutManager getLayoutManager() {
+    @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getLinearLayoutManager();
     }
 
-
-    @Override
-    protected int getItemLayout() {
-        return R.layout.item_type_two;
+    @Override protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList) {
+        return new AdapterExample(pictureList,R.layout.item_type_two);
     }
-
-    @Override
-    protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList, int itemLayout) {
-        return new AdapterExample(pictureList,itemLayout);
-    }
-
 
     private LinearLayoutManager getLinearLayoutManager() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
+        return new LinearLayoutManager(
                 getActivity(),
                 LinearLayoutManager.HORIZONTAL,
                 false);
 
-        return linearLayoutManager;
     }
 }
 

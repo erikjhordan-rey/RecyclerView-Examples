@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 
 import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
+import androidtitlan.gdg.recyclerview_examples.presenter.RecyclerItemClickListener;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -22,6 +24,12 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
 
     private ArrayList<Picture> pictureArrayList;
     private int itemLayout;
+    private RecyclerItemClickListener recyclerItemClickListener;
+
+    public void setRecyclerItemClickListener(RecyclerItemClickListener recyclerItemClickListener) {
+        this.recyclerItemClickListener = recyclerItemClickListener;
+    }
+
 
     public AdapterExample() {
     }
@@ -38,12 +46,10 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
     }
 
     @Override
-    public void onBindViewHolder(ExampleHolder holder, int position) {
-        Picture picture = pictureArrayList.get(position);
+    public void onBindViewHolder(final ExampleHolder holder, final int position) {
+        final Picture picture = pictureArrayList.get(position);
         holder.title.setText(picture.getName());
         holder.imageView.setImageResource(picture.getImage());
-
-
     }
 
 
@@ -53,8 +59,7 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
     }
 
 
-    public static class ExampleHolder extends RecyclerView.ViewHolder {
-
+    public class ExampleHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.txt_title)
         TextView title;
         @Bind(R.id.imageView)
@@ -63,8 +68,16 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
         public ExampleHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(this);
+
         }
 
+        @Override
+        public void onClick(View view) {
+            if (recyclerItemClickListener != null)
+                recyclerItemClickListener.onItemClickListener(getAdapterPosition());
+        }
     }
+
 
 }

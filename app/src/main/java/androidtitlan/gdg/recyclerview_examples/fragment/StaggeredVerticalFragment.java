@@ -18,20 +18,12 @@ public class StaggeredVerticalFragment extends BaseFragment {
         return new StaggeredVerticalFragment();
     }
 
-
-    @Override
-    protected RecyclerView.LayoutManager getLayoutManager() {
+    @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getStaggeredLayoutManager();
     }
 
-    @Override
-    protected int getItemLayout() {
-        return R.layout.item_type_three;
-    }
-
-    @Override
-    protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList, int itemLayout) {
-        return new AdapterExample(pictureList,itemLayout);
+    @Override protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList) {
+        return new AdapterExample(pictureList,R.layout.item_type_three);
     }
 
     private StaggeredGridLayoutManager getStaggeredLayoutManager() {

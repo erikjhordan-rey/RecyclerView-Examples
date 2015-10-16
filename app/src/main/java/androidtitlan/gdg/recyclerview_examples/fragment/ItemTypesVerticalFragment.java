@@ -1,7 +1,6 @@
 package androidtitlan.gdg.recyclerview_examples.fragment;
 
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -19,31 +18,22 @@ public class ItemTypesVerticalFragment extends BaseFragment {
         return new ItemTypesVerticalFragment();
     }
 
-
-    @Override
-    protected RecyclerView.LayoutManager getLayoutManager() {
+    @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getGridLayoutManager();
     }
 
-    @Override
-    protected int getItemLayout() {
-        return R.layout.item_type_two;
-    }
-
-    @Override
-    protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList, int itemLayout) {
-        return new AdapterExampleTypes(pictureList,itemLayout);
+    @Override protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList) {
+        return new AdapterExampleTypes(pictureList,R.layout.item_type_two);
     }
 
 
     private GridLayoutManager getGridLayoutManager() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(
+        return new GridLayoutManager(
                 getActivity(),
                 2,
                 GridLayoutManager.VERTICAL,
                 false);
 
-        return gridLayoutManager;
     }
 }
 
