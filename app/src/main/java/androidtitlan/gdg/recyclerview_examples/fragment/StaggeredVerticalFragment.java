@@ -18,6 +18,10 @@ public class StaggeredVerticalFragment extends BaseFragment {
         return new StaggeredVerticalFragment();
     }
 
+    @Override protected int getLayout() {
+        return R.layout.fragment_base;
+    }
+
     @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getStaggeredLayoutManager();
     }

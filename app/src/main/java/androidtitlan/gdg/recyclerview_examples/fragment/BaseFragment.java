@@ -31,17 +31,14 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseFragment extends Fragment implements PictureMvpView, RecyclerItemClickListener {
 
-    @Bind(R.id.recycler_view)
-    RecyclerView recyclerView;
-    @Bind(R.id.progress_bar)
-    ProgressBar progressBar;
+    @Bind(R.id.recycler_view) RecyclerView recyclerView;
+    @Bind(R.id.progress_bar) ProgressBar progressBar;
     private PicturePresenter picturePresenter;
     RecyclerView.Adapter adapter;
 
     @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_base, container, false);
+    @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(getLayout(), container, false);
         ButterKnife.bind(this, rootView);
 
         picturePresenter = new PicturePresenter();
@@ -51,18 +48,16 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView, R
         return rootView;
     }
 
-    @Override
-    public void onResume() {
+    @Override public void onResume() {
         super.onResume();
         picturePresenter.onResume();
     }
 
-    @Override
-    public void setItems(ArrayList<Picture> pictureList) {
+    @Override public void setItems(ArrayList<Picture> pictureList) {
         adapter = getAdapter(pictureList);
         recyclerView.setAdapter(adapter);
 
-        //TODO this code should be fixed
+        //TODO this code should be better
         if(adapter instanceof AdapterExample)
             ((AdapterExample) adapter).setRecyclerItemClickListener(this);
         else if(adapter instanceof AdapterExampleTypes)
@@ -70,44 +65,46 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView, R
 
     }
 
-    @Override
-    public void showProgress() {
+    @Override public void showProgress() {
         progressBar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.INVISIBLE);
     }
 
-    @Override
-    public void hideProgress() {
+    @Override public void hideProgress() {
         progressBar.setVisibility(View.INVISIBLE);
         recyclerView.setVisibility(View.VISIBLE);
     }
 
-    @Override
-    public void showMessage(String message) {
+    @Override public void showMessage(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onDestroy() {
+    @Override public void onDestroy() {
         picturePresenter.detachView();
         super.onDestroy();
     }
-
-    private void setupRecyclerView() {
-        recyclerView.setLayoutManager(getLayoutManager());
-        recyclerView.addItemDecoration(new ItemOffsetDecoration(recyclerView.getContext(), R.dimen.item_decoration));
-
-    }
-
-
-    protected abstract RecyclerView.LayoutManager getLayoutManager();
-
-    protected abstract RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList);
 
     @Override
     public void onItemClickListener(int position) {
         picturePresenter.onItemSelected(position);
     }
+
+    private void setupRecyclerView() {
+
+        if(getLayoutManager() != null)
+            recyclerView.setLayoutManager(getLayoutManager());
+
+        recyclerView.addItemDecoration(new ItemOffsetDecoration(recyclerView.getContext(), R.dimen.item_decoration));
+
+    }
+
+    protected abstract int getLayout();
+
+    protected abstract RecyclerView.LayoutManager getLayoutManager();
+
+    protected abstract RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList);
+
+
 
 
     //protected abstract RecyclerView.ItemDecoration getItemDecoration();

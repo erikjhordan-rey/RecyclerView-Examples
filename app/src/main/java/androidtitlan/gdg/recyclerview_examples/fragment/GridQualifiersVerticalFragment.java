@@ -12,34 +12,33 @@ import androidtitlan.gdg.recyclerview_examples.model.Picture;
 /**
  * Created by Jhordan on 13/10/15.
  */
-public class GridVerticalFragment extends BaseFragment {
+public class GridQualifiersVerticalFragment extends BaseFragment {
 
-    public static GridVerticalFragment newInstance() {
-        return new GridVerticalFragment();
+    public static GridQualifiersVerticalFragment newInstance() {
+        return new GridQualifiersVerticalFragment();
     }
 
     @Override protected int getLayout() {
         return R.layout.fragment_base;
     }
 
+
     @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getGridLayoutManager();
     }
 
-
     @Override protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList) {
-        return new AdapterExample(pictureList,R.layout.item_type_two);
+        return new AdapterExample(pictureList, R.layout.item_type_two);
     }
 
-
     private GridLayoutManager getGridLayoutManager() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(
+
+        final int spans = getResources().getInteger(R.integer.number_of_columns);
+        return new GridLayoutManager(
                 getActivity(),
-                2,
+                spans,
                 GridLayoutManager.VERTICAL,
                 false);
-
-        return gridLayoutManager;
     }
 }
 

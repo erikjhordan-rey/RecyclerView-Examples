@@ -35,6 +35,10 @@
             android:id="@+id/nav_item_responsive"
             android:title="Responsive RecyclerView" />
 
+        <item
+            android:id="@+id/nav_item_qualifiers"
+            android:title="Responsive RecyclerView (Qualifiers)" />
+
 
     </group>
 

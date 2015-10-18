@@ -18,6 +18,10 @@ public class LinearHorizontalFragment extends BaseFragment {
         return new LinearHorizontalFragment();
     }
 
+    @Override protected int getLayout() {
+        return R.layout.fragment_base;
+    }
+
     @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getLinearLayoutManager();
     }
