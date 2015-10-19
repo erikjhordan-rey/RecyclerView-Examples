@@ -18,20 +18,20 @@ public class ResponsiveRecyclerView extends RecyclerView {
 
     public ResponsiveRecyclerView(Context context) {
         super(context);
-        init(context, null);
+        initialize(context, null);
     }
 
     public ResponsiveRecyclerView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context, attrs);
+        initialize(context, attrs);
     }
 
     public ResponsiveRecyclerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init(context, attrs);
+        initialize(context, attrs);
     }
 
-    private void init(Context context, AttributeSet attrs) {
+    private void initialize(Context context, AttributeSet attrs) {
         if (attrs != null) {
             int[] attrsArray = {android.R.attr.columnWidth};
             TypedArray array = context.obtainStyledAttributes(attrs, attrsArray);

@@ -1,5 +1,7 @@
 package androidtitlan.gdg.recyclerview_examples.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -42,10 +44,9 @@ public class MainActivity extends AppCompatActivity implements DrawerPresenterIm
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/erikcaffrey/RecyclerView-Examples")));
 
-            Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
-        }
         return super.onOptionsItemSelected(item);
     }
 

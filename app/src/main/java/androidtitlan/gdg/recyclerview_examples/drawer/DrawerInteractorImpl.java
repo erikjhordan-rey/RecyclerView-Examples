@@ -57,7 +57,6 @@ public class DrawerInteractorImpl implements DrawerInteractor {
                 listener.fragmentReplace(GridQualifiersVerticalFragment.newInstance());
                 break;
 
-
         }
         drawerLayout.closeDrawer(GravityCompat.START);
     }

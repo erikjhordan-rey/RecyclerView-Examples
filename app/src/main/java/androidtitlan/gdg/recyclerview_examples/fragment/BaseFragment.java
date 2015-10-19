@@ -3,6 +3,7 @@ package androidtitlan.gdg.recyclerview_examples.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,7 +58,6 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView, R
         adapter = getAdapter(pictureList);
         recyclerView.setAdapter(adapter);
 
-        //TODO this code should be better
         if(adapter instanceof AdapterExample)
             ((AdapterExample) adapter).setRecyclerItemClickListener(this);
         else if(adapter instanceof AdapterExampleTypes)
@@ -95,6 +95,7 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView, R
             recyclerView.setLayoutManager(getLayoutManager());
 
         recyclerView.addItemDecoration(new ItemOffsetDecoration(recyclerView.getContext(), R.dimen.item_decoration));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
     }
 
