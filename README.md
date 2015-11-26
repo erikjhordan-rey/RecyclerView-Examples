@@ -1,6 +1,6 @@
 # RecyclerView-Examples
 
-Examples of RecyclerView for my personal blog [Why should we use a RecyclerView?][1]
+This example was created to support an article explanation [Why should we use a RecyclerView?][1] (spanish).
 
 # Features 
  
