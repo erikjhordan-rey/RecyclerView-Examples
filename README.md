@@ -18,7 +18,7 @@ Libraries used on the sample project
 * [Butterknife][2]
 
 # Demo
-![](https://aa1a5cf3c6e3569b77b29843c3f5b6ba8b369090.googledrive.com/host/0B9hNKr5AY4xXTXktOS11VlBaemM/Telecine_2015-10-18-21-56-43.gif)
+![](./art/Telecine_2015-10-18-21-56-43.gif)
 
 Do you want to contribute?
 --------------------------
