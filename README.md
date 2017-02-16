@@ -32,7 +32,7 @@ Developed By
 
 
 [2]: http://jakewharton.github.io/butterknife/
-[1]: http://erikcaffrey.github.io/2015/10/05/recyclerview/
+[1]: https://erikcaffrey.github.io/ANDROID-recyclerview/
 
 License
 -------
