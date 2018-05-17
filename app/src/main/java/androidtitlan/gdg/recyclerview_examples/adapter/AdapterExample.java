@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
 import androidtitlan.gdg.recyclerview_examples.presenter.RecyclerItemClickListener;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -60,9 +59,9 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
 
 
     public class ExampleHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @Bind(R.id.txt_title)
+        @BindView(R.id.txt_title)
         TextView title;
-        @Bind(R.id.imageView)
+        @BindView(R.id.imageView)
         ImageView imageView;
 
         public ExampleHolder(View itemView) {

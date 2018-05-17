@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
 import androidtitlan.gdg.recyclerview_examples.presenter.RecyclerItemClickListener;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -119,9 +119,9 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public static class ExampleHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.txt_title)
+        @BindView(R.id.txt_title)
         TextView title;
-        @Bind(R.id.imageView)
+        @BindView(R.id.imageView)
         ImageView imageView;
         View view;
 
@@ -135,9 +135,9 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public static class ExampleHolderTypeTwo extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.txt_title)
+        @BindView(R.id.txt_title)
         TextView title;
-        @Bind(R.id.imageView)
+        @BindView(R.id.imageView)
         ImageView imageView;
         View view;
 
@@ -151,9 +151,9 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public static class ExampleHolderTypeThree extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.txt_title)
+        @BindView(R.id.txt_title)
         TextView title;
-        @Bind(R.id.imageView)
+        @BindView(R.id.imageView)
         ImageView imageView;
         View view;
 

@@ -24,7 +24,7 @@ import androidtitlan.gdg.recyclerview_examples.presenter.RecyclerItemClickListen
 import androidtitlan.gdg.recyclerview_examples.view.PictureMvpView;
 import androidtitlan.gdg.recyclerview_examples.widget.DividerDecoration;
 import androidtitlan.gdg.recyclerview_examples.widget.ItemOffsetDecoration;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -32,8 +32,8 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseFragment extends Fragment implements PictureMvpView, RecyclerItemClickListener {
 
-    @Bind(R.id.recycler_view) RecyclerView recyclerView;
-    @Bind(R.id.progress_bar) ProgressBar progressBar;
+    @BindView(R.id.recycler_view) RecyclerView recyclerView;
+    @BindView(R.id.progress_bar) ProgressBar progressBar;
     private PicturePresenter picturePresenter;
     RecyclerView.Adapter adapter;
 
