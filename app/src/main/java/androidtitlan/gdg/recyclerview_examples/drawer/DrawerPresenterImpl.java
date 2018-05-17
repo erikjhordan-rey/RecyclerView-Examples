@@ -9,8 +9,8 @@ import android.view.MenuItem;
  */
 public class DrawerPresenterImpl implements DrawerPresenter, DrawerListener {
 
-    DrawerInteractorImpl drawerInteractor;
-    DrawerView drawerView;
+    private final DrawerInteractorImpl drawerInteractor;
+    private final DrawerView drawerView;
 
     public DrawerPresenterImpl(DrawerView drawerView) {
         this.drawerView = drawerView;
@@ -23,7 +23,7 @@ public class DrawerPresenterImpl implements DrawerPresenter, DrawerListener {
     }
 
     @Override
-    public void fragmentReplace(Fragment fragment) {
+    public void replaceFragment(Fragment fragment) {
         drawerView.navigateUsingTo(fragment);
     }
 

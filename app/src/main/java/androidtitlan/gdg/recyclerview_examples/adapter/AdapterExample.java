@@ -1,5 +1,6 @@
 package androidtitlan.gdg.recyclerview_examples.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,6 @@ import butterknife.ButterKnife;
  */
 public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleHolder> {
 
-
     private ArrayList<Picture> pictureArrayList;
     private int itemLayout;
     private RecyclerItemClickListener recyclerItemClickListener;
@@ -29,23 +29,20 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
         this.recyclerItemClickListener = recyclerItemClickListener;
     }
 
-
-    public AdapterExample() {
-    }
-
     public AdapterExample(ArrayList<Picture> pictureArrayList, int itemLayout) {
         this.pictureArrayList = pictureArrayList;
         this.itemLayout = itemLayout;
     }
 
+    @NonNull
     @Override
-    public ExampleHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ExampleHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
         return new ExampleHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ExampleHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ExampleHolder holder, final int position) {
         final Picture picture = pictureArrayList.get(position);
         holder.title.setText(picture.getName());
         holder.imageView.setImageResource(picture.getImage());
@@ -64,7 +61,7 @@ public class AdapterExample extends RecyclerView.Adapter<AdapterExample.ExampleH
         @BindView(R.id.imageView)
         ImageView imageView;
 
-        public ExampleHolder(View itemView) {
+        ExampleHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);

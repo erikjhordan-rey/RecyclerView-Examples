@@ -13,7 +13,7 @@ import androidtitlan.gdg.recyclerview_examples.view.PictureMvpView;
 public class PicturePresenter implements Presenter<PictureMvpView>, LoaderListener {
 
     private PictureMvpView pictureMvpView;
-    private PictureInteractor pictureInteractor;
+    private final PictureInteractor pictureInteractor;
 
     public PicturePresenter() {
         pictureInteractor = new PictureInteractor();

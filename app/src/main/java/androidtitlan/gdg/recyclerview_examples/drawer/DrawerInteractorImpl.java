@@ -26,35 +26,35 @@ public class DrawerInteractorImpl implements DrawerInteractor {
 
         switch (item.getItemId()) {
             case R.id.nav_linear_v:
-                listener.fragmentReplace(LinearVerticalFragment.newInstance());
+                listener.replaceFragment(LinearVerticalFragment.newInstance());
                 break;
             case R.id.nav_linear_h:
-                listener.fragmentReplace(LinearHorizontalFragment.newInstance());
+                listener.replaceFragment(LinearHorizontalFragment.newInstance());
                 break;
             case R.id.nav_grid_v:
-                listener.fragmentReplace(GridVerticalFragment.newInstance());
+                listener.replaceFragment(GridVerticalFragment.newInstance());
                 break;
             case R.id.nav_grid_h:
-                listener.fragmentReplace(GridHorizontalFragment.newInstance());
+                listener.replaceFragment(GridHorizontalFragment.newInstance());
                 break;
             case R.id.nav_grid_span:
-                listener.fragmentReplace(GridSpanSizeVerticalFragment.newInstance());
+                listener.replaceFragment(GridSpanSizeVerticalFragment.newInstance());
                 break;
             case R.id.nav_staggered_v:
-                listener.fragmentReplace(StaggeredVerticalFragment.newInstance());
+                listener.replaceFragment(StaggeredVerticalFragment.newInstance());
                 break;
             case R.id.nav_staggered_h:
-                listener.fragmentReplace(StaggeredHorizontalFragment.newInstance());
+                listener.replaceFragment(StaggeredHorizontalFragment.newInstance());
                 break;
 
             case R.id.nav_item_types:
-                listener.fragmentReplace(ItemTypesVerticalFragment.newInstance());
+                listener.replaceFragment(ItemTypesVerticalFragment.newInstance());
                 break;
             case R.id.nav_item_responsive:
-                listener.fragmentReplace(ResponsiveLinearVerticalFragment.newInstance());
+                listener.replaceFragment(ResponsiveLinearVerticalFragment.newInstance());
                 break;
             case R.id.nav_item_qualifiers:
-                listener.fragmentReplace(GridQualifiersVerticalFragment.newInstance());
+                listener.replaceFragment(GridQualifiersVerticalFragment.newInstance());
                 break;
 
         }

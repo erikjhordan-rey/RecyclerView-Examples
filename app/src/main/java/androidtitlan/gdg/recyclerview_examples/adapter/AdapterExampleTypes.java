@@ -1,5 +1,6 @@
 package androidtitlan.gdg.recyclerview_examples.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,6 @@ import butterknife.ButterKnife;
  */
 public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-
     private ArrayList<Picture> pictureArrayList;
     private int itemLayout;
 
@@ -33,22 +33,19 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
         this.recyclerItemClickListener = recyclerItemClickListener;
     }
 
-    public AdapterExampleTypes() {
-    }
-
     public AdapterExampleTypes(ArrayList<Picture> pictureArrayList, int itemLayout) {
         this.pictureArrayList = pictureArrayList;
         this.itemLayout = itemLayout;
     }
 
+    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         RecyclerView.ViewHolder viewHolderType = null;
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         switch (viewType) {
-
             case TYPE_ITEM_1:
                 View view = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
                 viewHolderType = new ExampleHolder(view);
@@ -59,15 +56,13 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
             case TYPE_ITEM_3:
                 viewHolderType = new ExampleHolderTypeThree(inflater.inflate(R.layout.item_type_five, parent, false));
                 break;
-
-
         }
 
         return viewHolderType;
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         Picture picture = pictureArrayList.get(position);
 
 
