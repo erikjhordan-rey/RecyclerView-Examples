@@ -1,18 +1,17 @@
 package androidtitlan.gdg.recyclerview_examples.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -23,14 +22,10 @@ import androidtitlan.gdg.recyclerview_examples.model.Picture;
 import androidtitlan.gdg.recyclerview_examples.presenter.PicturePresenter;
 import androidtitlan.gdg.recyclerview_examples.presenter.RecyclerItemClickListener;
 import androidtitlan.gdg.recyclerview_examples.view.PictureMvpView;
-import androidtitlan.gdg.recyclerview_examples.widget.DividerDecoration;
 import androidtitlan.gdg.recyclerview_examples.widget.ItemOffsetDecoration;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Jhordan on 13/10/15.
- */
 public abstract class BaseFragment extends Fragment implements PictureMvpView, RecyclerItemClickListener {
 
     @BindView(R.id.recycler_view) RecyclerView recyclerView;
@@ -105,9 +100,6 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView, R
     protected abstract RecyclerView.LayoutManager getLayoutManager();
 
     protected abstract RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList);
-
-
-
 
     //protected abstract RecyclerView.ItemDecoration getItemDecoration();
 }

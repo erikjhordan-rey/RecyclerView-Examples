@@ -1,12 +1,13 @@
 package androidtitlan.gdg.recyclerview_examples.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -16,9 +17,6 @@ import androidtitlan.gdg.recyclerview_examples.presenter.RecyclerItemClickListen
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Jhordan on 13/10/15.
- */
 public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<Picture> pictureArrayList;
@@ -92,7 +90,6 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
 
     }
 
-
     @Override
     public int getItemCount() {
         return pictureArrayList.size();
@@ -114,13 +111,11 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public static class ExampleHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.txt_title)
-        TextView title;
-        @BindView(R.id.imageView)
-        ImageView imageView;
+        @BindView(R.id.txt_title) TextView title;
+        @BindView(R.id.imageView) ImageView imageView;
         View view;
 
-        public ExampleHolder(View itemView) {
+        ExampleHolder(View itemView) {
             super(itemView);
             view = itemView;
             ButterKnife.bind(this, itemView);
@@ -130,13 +125,11 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public static class ExampleHolderTypeTwo extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.txt_title)
-        TextView title;
-        @BindView(R.id.imageView)
-        ImageView imageView;
+        @BindView(R.id.txt_title) TextView title;
+        @BindView(R.id.imageView) ImageView imageView;
         View view;
 
-        public ExampleHolderTypeTwo(View itemView) {
+        ExampleHolderTypeTwo(View itemView) {
             super(itemView);
             view = itemView;
             ButterKnife.bind(this, itemView);
@@ -146,19 +139,15 @@ public class AdapterExampleTypes extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public static class ExampleHolderTypeThree extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.txt_title)
-        TextView title;
-        @BindView(R.id.imageView)
-        ImageView imageView;
+        @BindView(R.id.txt_title) TextView title;
+        @BindView(R.id.imageView) ImageView imageView;
         View view;
 
-        public ExampleHolderTypeThree(View itemView) {
+        ExampleHolderTypeThree(View itemView) {
             super(itemView);
             view = itemView;
             ButterKnife.bind(this, itemView);
-
         }
-
 
     }
 

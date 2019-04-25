@@ -7,9 +7,6 @@ import androidtitlan.gdg.recyclerview_examples.model.Picture;
 import androidtitlan.gdg.recyclerview_examples.model.PictureInteractor;
 import androidtitlan.gdg.recyclerview_examples.view.PictureMvpView;
 
-/**
- * Created by Jhordan on 13/10/15.
- */
 public class PicturePresenter implements Presenter<PictureMvpView>, LoaderListener {
 
     private PictureMvpView pictureMvpView;
@@ -23,7 +20,6 @@ public class PicturePresenter implements Presenter<PictureMvpView>, LoaderListen
     public void attachedView(PictureMvpView view) {
         if (view == null)
             throw new IllegalArgumentException("You can't set a null view");
-
         pictureMvpView = view;
     }
 

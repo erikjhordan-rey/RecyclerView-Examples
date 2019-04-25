@@ -2,16 +2,12 @@ package androidtitlan.gdg.recyclerview_examples.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
-/**
- *
- * This class adapts spanCount automatically according to the screen size
- * Created by Jhordan on 16/07/15.
- */
-public class ResponsiveRecyclerView extends RecyclerView {
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+class ResponsiveRecyclerView extends RecyclerView {
 
     private GridLayoutManager manager;
     private int columnWidth = -1;
@@ -38,7 +34,6 @@ public class ResponsiveRecyclerView extends RecyclerView {
             columnWidth = array.getDimensionPixelSize(0, -1);
             array.recycle();
         }
-
         manager = new GridLayoutManager(getContext(), 1);
         setLayoutManager(manager);
     }

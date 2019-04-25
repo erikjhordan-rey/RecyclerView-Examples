@@ -1,10 +1,7 @@
 package androidtitlan.gdg.recyclerview_examples.drawer;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
-/**
- * Created by Jhordan on 13/10/15.
- */
 public interface DrawerListener {
     void replaceFragment(Fragment fragment);
 }

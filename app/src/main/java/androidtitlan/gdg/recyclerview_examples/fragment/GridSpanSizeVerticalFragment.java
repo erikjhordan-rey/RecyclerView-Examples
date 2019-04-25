@@ -1,7 +1,7 @@
 package androidtitlan.gdg.recyclerview_examples.fragment;
 
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -9,15 +9,11 @@ import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.adapter.AdapterExample;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
 
-/**
- * Created by Jhordan on 13/10/15.
- */
 public class GridSpanSizeVerticalFragment extends BaseFragment {
 
     public static GridSpanSizeVerticalFragment newInstance() {
         return new GridSpanSizeVerticalFragment();
     }
-
 
     @Override
     protected int getLayout() {
@@ -37,7 +33,7 @@ public class GridSpanSizeVerticalFragment extends BaseFragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(
                 getActivity(),
                 2,
-                GridLayoutManager.VERTICAL,
+                RecyclerView.VERTICAL,
                 false);
 
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
@@ -47,8 +43,6 @@ public class GridSpanSizeVerticalFragment extends BaseFragment {
                 return (position % 3 == 0 ? 2 : 1);
             }
         });
-
-
         return gridLayoutManager;
     }
 }

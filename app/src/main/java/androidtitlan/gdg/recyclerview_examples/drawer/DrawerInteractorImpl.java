@@ -1,9 +1,11 @@
 package androidtitlan.gdg.recyclerview_examples.drawer;
 
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.fragment.GridHorizontalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.GridQualifiersVerticalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.GridSpanSizeVerticalFragment;
@@ -11,14 +13,10 @@ import androidtitlan.gdg.recyclerview_examples.fragment.GridVerticalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.ItemTypesVerticalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.LinearHorizontalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.LinearVerticalFragment;
-import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.fragment.ResponsiveLinearVerticalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.StaggeredHorizontalFragment;
 import androidtitlan.gdg.recyclerview_examples.fragment.StaggeredVerticalFragment;
 
-/**
- * Created by Jhordan on 13/10/15.
- */
 public class DrawerInteractorImpl implements DrawerInteractor {
 
     @Override

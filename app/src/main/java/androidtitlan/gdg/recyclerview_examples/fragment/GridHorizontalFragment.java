@@ -1,7 +1,7 @@
 package androidtitlan.gdg.recyclerview_examples.fragment;
 
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -9,9 +9,6 @@ import androidtitlan.gdg.recyclerview_examples.R;
 import androidtitlan.gdg.recyclerview_examples.adapter.AdapterExample;
 import androidtitlan.gdg.recyclerview_examples.model.Picture;
 
-/**
- * Created by Jhordan on 13/10/15.
- */
 public class GridHorizontalFragment extends BaseFragment {
 
     public static GridHorizontalFragment newInstance() {

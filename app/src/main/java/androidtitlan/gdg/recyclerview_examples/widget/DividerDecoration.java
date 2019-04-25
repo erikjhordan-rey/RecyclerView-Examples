@@ -5,13 +5,11 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import androidtitlan.gdg.recyclerview_examples.R;
-/**
- * Created by Jhordan on 14/10/15.
- */
 
 public class DividerDecoration extends RecyclerView.ItemDecoration {
 

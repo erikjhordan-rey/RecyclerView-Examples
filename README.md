@@ -28,11 +28,11 @@ Feel free to report or add any useful feature, I will be glad to improve it with
 Developed By
 ------------
 
-* Erik Jhordan Rey  - <erikjhordan.rey@gmail.com>
+* Erik Jhordan Rey - <erikjhordan.rey@gmail.com>
 
 
 [2]: http://jakewharton.github.io/butterknife/
-[1]: https://erikcaffrey.github.io/ANDROID-recyclerview/
+[1]: https://erikjhordan-rey.github.io/blog/2015/10/04/ANDROID-recyclerview.html
 
 License
 -------

@@ -1,8 +1,5 @@
 package androidtitlan.gdg.recyclerview_examples.model;
 
-/**
- * Created by Jhordan on 13/10/15.
- */
 public class Picture {
 
     private int image;
