@@ -1,6 +1,6 @@
 # RecyclerView-Examples
 
-This example was created to support an article explanation [Why should we use a RecyclerView?][1] (spanish).
+Sample created to support an article explanation [RecyclerView - Spanish](https://erikjhordan-rey.github.io/blog/2015/10/04/ANDROID-recyclerview.html)
 
 # Features 
  
@@ -11,11 +11,7 @@ This example was created to support an article explanation [Why should we use a 
  * **ItemTypes**
  * **MVP design pattern**
  * **Responsive design techniques**
- 
-Libraries used on the sample project
-------------------------------------
 
-* [Butterknife][2]
 
 # Demo
 ![](./art/Telecine_2015-10-18-21-56-43.gif)
@@ -23,16 +19,12 @@ Libraries used on the sample project
 Do you want to contribute?
 --------------------------
 
-Feel free to report or add any useful feature, I will be glad to improve it with your help, before submitting your code please check the [codestyle](https://github.com/square/java-code-styles).
+Feel free to report or add any useful feature.
 
 Developed By
 ------------
 
 * Erik Jhordan Rey - <erikjhordan.rey@gmail.com>
-
-
-[2]: http://jakewharton.github.io/butterknife/
-[1]: https://erikjhordan-rey.github.io/blog/2015/10/04/ANDROID-recyclerview.html
 
 License
 -------
