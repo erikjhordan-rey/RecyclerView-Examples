@@ -1,6 +1,6 @@
 # RecyclerView-Examples
 
-Sample created to support an article explanation [RecyclerView - Spanish](https://erikjhordan-rey.github.io/blog/2015/10/04/ANDROID-recyclerview.html)
+Sample created to support an article explanation [Learn Android RecyclerView - Spanish](https://erikjhordan-rey.github.io/blog/2015/10/04/ANDROID-recyclerview.html)
 
 # Features 
  
@@ -15,6 +15,18 @@ Sample created to support an article explanation [RecyclerView - Spanish](https:
 
 # Demo
 ![](./art/Telecine_2015-10-18-21-56-43.gif)
+
+
+# Bonus
+
+#### RecyclerView ConcatAdapter
+
+The main goal is to practice RecyclerView ConcatAdapter a new RecyclerView Adapter that can combine multiple adapters linearly.
+
+<img src="https://user-images.githubusercontent.com/5893477/87633281-b6431b00-c700-11ea-9de0-3c60951e4450.png" width="260">
+
+[Source Code](https://github.com/erikjhordan-rey/RecyclerView-ConcatAdapter)
+
 
 Do you want to contribute?
 --------------------------
