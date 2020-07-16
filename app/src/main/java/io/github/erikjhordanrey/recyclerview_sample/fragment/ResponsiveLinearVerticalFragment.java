@@ -1,5 +1,6 @@
 package io.github.erikjhordanrey.recyclerview_sample.fragment;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import io.github.erikjhordanrey.recyclerview_sample.R;
 import java.util.ArrayList;
@@ -13,11 +14,6 @@ public class ResponsiveLinearVerticalFragment extends BaseFragment {
     }
 
     @Override
-    protected int getLayout() {
-        return R.layout.fragment_responsive;
-    }
-
-    @Override
     protected RecyclerView.LayoutManager getLayoutManager() {
         return null;
     }
@@ -27,5 +23,4 @@ public class ResponsiveLinearVerticalFragment extends BaseFragment {
     protected RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList) {
         return new AdapterExample(pictureList, R.layout.item_type_one);
     }
-
 }

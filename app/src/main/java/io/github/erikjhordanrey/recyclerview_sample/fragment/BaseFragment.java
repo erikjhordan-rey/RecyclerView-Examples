@@ -99,8 +99,6 @@ public abstract class BaseFragment extends Fragment implements PictureMvpView, R
 
     }
 
-    protected abstract int getLayout();
-
     protected abstract RecyclerView.LayoutManager getLayoutManager();
 
     protected abstract RecyclerView.Adapter getAdapter(ArrayList<Picture> pictureList);

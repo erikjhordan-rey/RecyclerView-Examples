@@ -13,10 +13,6 @@ public class GridHorizontalFragment extends BaseFragment {
         return new GridHorizontalFragment();
     }
 
-    @Override protected int getLayout() {
-        return R.layout.fragment_base;
-    }
-
     @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getGridLayoutManager();
     }

@@ -13,11 +13,6 @@ public class GridQualifiersVerticalFragment extends BaseFragment {
         return new GridQualifiersVerticalFragment();
     }
 
-    @Override protected int getLayout() {
-        return R.layout.fragment_base;
-    }
-
-
     @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getGridLayoutManager();
     }

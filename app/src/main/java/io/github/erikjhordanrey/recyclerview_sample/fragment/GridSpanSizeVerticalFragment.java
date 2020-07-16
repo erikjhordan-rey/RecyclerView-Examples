@@ -13,11 +13,6 @@ public class GridSpanSizeVerticalFragment extends BaseFragment {
         return new GridSpanSizeVerticalFragment();
     }
 
-    @Override
-    protected int getLayout() {
-        return R.layout.fragment_base;
-    }
-
     @Override protected RecyclerView.LayoutManager getLayoutManager() {
         return getGridLayoutManager();
     }
