@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidtitlan.gdg.recyclerview_examples.widget.ResponsiveRecyclerView
+    <io.github.erikjhordanrey.recyclerview_sample.widget.ResponsiveRecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

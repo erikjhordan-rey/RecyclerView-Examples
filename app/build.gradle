@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "androidtitlan.gdg.recyclerview_examples"
+        applicationId "io.github.erikjhordanrey.recyclerview_sample"
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
@@ -20,6 +20,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
